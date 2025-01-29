@@ -6,13 +6,13 @@ sudo apt-get install -y curl wget vim zsh
 
 
 # Installing oh-my-zsh (not necessary)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Installing virtual box
 sudo wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O /usr/share/keyrings/oracle.asc
 sudo gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys A2F683C52980AECF
 sudo gpg --armor --export A2F683C52980AECF | sudo tee /usr/share/keyrings/oracle.asc
-sudo echo 'deb [signed-by=/usr/share/keyrings/oracle.asc] http://download.virtualbox.org/virtualbox/debian bookworm contrib' >> /etc/apt/sources.list.d/virtualbox.list
+echo 'deb [signed-by=/usr/share/keyrings/oracle.asc] http://download.virtualbox.org/virtualbox/debian bookworm contrib' | sudo tee -a /etc/apt/sources.list.d/virtualbox.list > /dev/null
 sudo apt-get update && sudo apt-get install virtualbox-7.1
 
 

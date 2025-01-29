@@ -1,4 +1,4 @@
 all:
-	sh setup.sh
+	sudo sh setup.sh
 
 .PHONY: all
